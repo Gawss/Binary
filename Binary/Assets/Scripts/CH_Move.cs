@@ -4,16 +4,34 @@ using UnityEngine;
 
 public class CH_Move : MonoBehaviour {
 
-    float speed;
+    float speed_x;
+	float speed_y;
 	Rigidbody2D rb;
+	Animator animator;
     void Start ()
     {
 		rb = GetComponent<Rigidbody2D>();
+		animator = GetComponent<Animator>();
     }
 
 	void Update(){
-		speed = Input.GetAxis("Horizontal");
-		rb.velocity = new Vector3(speed*1.2f, 0, 0);
+		speed_x = Input.GetAxis("Horizontal");
+		speed_y = Input.GetAxis("Vertical");
+		rb.velocity = new Vector3(speed_x*1.2f, speed_y*1.2f, 0);
+
+		if(Input.GetAxis("Horizontal") != 0){
+			Debug.Log("animCh = 1");
+			animator.SetInteger("animCh", 1);
+			if(Input.GetAxis("Horizontal") < 0){
+				this.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f); 
+			}else if(Input.GetAxis("Horizontal") > 0){
+				this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f); 
+			}
+		}
+		else{
+			Debug.Log("animCh = 0");
+			animator.SetInteger("animCh", 0);
+		}
 		// if (Input.GetKey(KeyCode.LeftArrow)){
 		// 	this.transform.position += new Vector3(-0.2f, 0, 0);
 		// }
