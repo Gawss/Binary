@@ -46,7 +46,7 @@ public class CH_Move : MonoBehaviour {
 				animator.SetInteger("animCh", 1);
 			}
 			rb.velocity = new Vector3(speed_x*10.0f, 0, 0);
-			if (Input.GetKey(KeyCode.UpArrow)){
+			if (Input.GetKey(KeyCode.Space)){
 				// this.transform.position += new Vector3(0, 0.2f, 0);
 				rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 				// rb.velocity = new Vector2(0, 100.0f);
