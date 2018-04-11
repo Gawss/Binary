@@ -17,7 +17,7 @@ public class CH_Move : MonoBehaviour {
 	void Update(){
 		speed_x = Input.GetAxis("Horizontal");
 		speed_y = Input.GetAxis("Vertical");
-		rb.velocity = new Vector3(speed_x*1.2f, speed_y*1.2f, 0);
+		rb.velocity = new Vector3(speed_x*5.0f, speed_y*25.0f, 0);
 
 		if(Input.GetAxis("Horizontal") != 0){
 			Debug.Log("animCh = 1");
@@ -32,6 +32,7 @@ public class CH_Move : MonoBehaviour {
 			Debug.Log("animCh = 0");
 			animator.SetInteger("animCh", 0);
 		}
+
 		// if (Input.GetKey(KeyCode.LeftArrow)){
 		// 	this.transform.position += new Vector3(-0.2f, 0, 0);
 		// }
@@ -47,8 +48,9 @@ public class CH_Move : MonoBehaviour {
 		// if (Input.GetKeyUp (KeyCode.DownArrow)){
 		// 	this.transform.localScale = new Vector3(2, 5, 2);
 		// }
-		// if (Input.GetKey(KeyCode.UpArrow)){
-		// 	this.transform.position += new Vector3(0, 0.2f, 0);
-		// }
+		//if (Input.GetKey(KeyCode.UpArrow)){
+		 	//this.transform.position += new Vector3(0, 0.2f, 0);
+		//	rb.AddForce(Vector3.up * 1000); 
+		//}
 	}
 }
