@@ -53,3 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1639471969655032, guid: 8124bfd73a5ae1f43a1de24d0fce45d9,
     type: 2}
+  player: {fileID: 1898555667737422, guid: fa4d02e21c64c29408d1d98c08305bc7, type: 2}
+  mainCam: {fileID: 20593716645412044, guid: 59c9b53273f1f0b47a1e25405babcc71, type: 2}

@@ -4,18 +4,45 @@ using UnityEngine;
 
 public class lampController : MonoBehaviour {
 
+	Animator animator;
+	string lampState_;
 	public GameObject lampTutorial;
 	// Use this for initialization
 	void Start () {
-		
+		animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(GameController.lampState == "lampTutorial_On"){
-			lampTutorial.SetActive(true);
-		}else{
-			lampTutorial.SetActive(false);
+		if(lampState_ == "lampInRange"){
+			if(Input.GetKey(KeyCode.Z)){
+				if(animator.GetInteger("animLamp") == 0){
+					animator.SetInteger("animLamp", 1);
+				}else if(animator.GetInteger("animLamp") == 1){
+					animator.SetInteger("animLamp", 0);
+				}
+			}
+			if(GameController.level == 1){
+				lampTutorial.SetActive(true);
+			}
+		}else if(lampState_ == "lampOutOfRange"){
+
+			if(GameController.level == 1){
+				lampTutorial.SetActive(false);
+			}
+		}
+	}
+	void OnTriggerEnter2D(Collider2D coll){
+		if(coll.gameObject.tag == "playerTrigger"){
+			Debug.Log("lamp in range...");
+			lampState_ = "lampInRange";
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D coll){
+		if(coll.gameObject.tag == "playerTrigger"){
+			Debug.Log("lamp out of range...");
+			lampState_ = "lampOutOfRange";
 		}
 	}
 }

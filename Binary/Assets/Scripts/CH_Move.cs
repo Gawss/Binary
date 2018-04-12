@@ -106,14 +106,5 @@ public class CH_Move : MonoBehaviour {
 			Debug.Log("Contact with enemyCollider");
 			enemyInRange = true;
 		}
-		if(coll.gameObject.tag == "lamp"){
-			GameController.lampState = "lampTutorial_On";
-		}
-	}
-
-	void OnTriggerExit2D(Collider2D coll){
-		if(coll.gameObject.tag == "lamp"){
-			GameController.lampState = "lampTutorial_Off";
-		}
 	}
 }
