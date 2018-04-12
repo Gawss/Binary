@@ -14,7 +14,9 @@ public class EnemyT1Controller : MonoBehaviour {
 	void Update () {
 		if(GameController.enemyAnim_State == "dead"){
 			animator.SetInteger("animEnemy", 1);
-			Destroy(GetComponent<BoxCollider2D>());
+			Destroy(gameObject);
+			GameController.initLevel = false;
+			GameController.level = 2;
 		}
 	}
 }

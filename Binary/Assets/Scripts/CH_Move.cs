@@ -82,13 +82,13 @@ public class CH_Move : MonoBehaviour {
 			
 			if(Input.GetKey(KeyCode.Z)){
 				animator.SetInteger("animCh", 3);
-				if(oneKill == false){
+				// if(oneKill == false){
 					if(enemyInRange == true){
 						Debug.Log("Enemy killed...");
 						GameController.enemyAnim_State = "dead";
-						oneKill = true;
+						// oneKill = true;
 					}
-				}
+				// }
 			}
 			
 		}
