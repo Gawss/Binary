@@ -15,19 +15,25 @@ public class lampController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(lampState_ == "lampInRange"){
+
 			if(Input.GetKey(KeyCode.Z)){
+
 				if(animator.GetInteger("animLamp") == 0){
+
+					CH_Move.playerAction = "TurningObj_On";
 					animator.SetInteger("animLamp", 1);
+					
 				}else if(animator.GetInteger("animLamp") == 1){
 					animator.SetInteger("animLamp", 0);
+					CH_Move.playerAction = "TurningObj_On";
 				}
 			}
-			if(GameController.level == 1){
+			if(GameController.level == 0){
 				lampTutorial.SetActive(true);
 			}
 		}else if(lampState_ == "lampOutOfRange"){
 
-			if(GameController.level == 1){
+			if(GameController.level == 0){
 				lampTutorial.SetActive(false);
 			}
 		}

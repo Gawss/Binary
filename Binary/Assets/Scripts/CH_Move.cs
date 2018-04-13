@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CH_Move : MonoBehaviour {
 
+	public static string playerAction;
     float speed_x;
 	float speed_y;
 	bool jumping;
-	bool jumpingAttack_Available;
-	bool enemyInRange;
+	public static bool jumpingAttack_Available;
+
 	public float jumpForce;
-	bool oneKill;
+
 	Rigidbody2D rb;
 	Animator animator;
     void Start ()
@@ -19,8 +20,8 @@ public class CH_Move : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		jumping = false;
 		jumpingAttack_Available = false;
-		enemyInRange = false;
-		oneKill = false;
+
+		playerAction = "Idle";
 	
     }
 
@@ -79,18 +80,14 @@ public class CH_Move : MonoBehaviour {
 		}
 		if(jumpingAttack_Available == true){
 			
-			
 			if(Input.GetKey(KeyCode.Z)){
 				animator.SetInteger("animCh", 3);
-				// if(oneKill == false){
-					if(enemyInRange == true){
-						Debug.Log("Enemy killed...");
-						GameController.enemyAnim_State = "dead";
-						// oneKill = true;
-					}
-				// }
 			}
-			
+		}
+
+		if(playerAction == "TurningObj_On"){
+			animator.SetInteger("animCh", 4);
+			playerAction = "Idle";
 		}
 	}
     void OnCollisionEnter2D(Collision2D coll) {
@@ -101,10 +98,4 @@ public class CH_Move : MonoBehaviour {
 		}
 
     }
-	void OnTriggerEnter2D(Collider2D coll){
-        if (coll.gameObject.tag == "enemyCollider"){
-			Debug.Log("Contact with enemyCollider");
-			enemyInRange = true;
-		}
-	}
 }
