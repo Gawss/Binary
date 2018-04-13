@@ -54,7 +54,7 @@ Transform:
   m_GameObject: {fileID: 1971589063538076}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.35, y: -0.4, z: -0.7}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 4563027308122770}
   m_RootOrder: 0
@@ -66,8 +66,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1030871184613894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.89, y: 1.72, z: -0.7}
-  m_LocalScale: {x: 0.6097973, y: 0.6097973, z: 0.6097973}
+  m_LocalPosition: {x: 5.71, y: 1.31, z: -0.7}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 4073349178066172}
   m_Father: {fileID: 0}
@@ -89,8 +89,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.18, y: 7.2}
-    newSize: {x: 5.18, y: 7.2}
+    oldSize: {x: 5.19, y: 8.32}
+    newSize: {x: 5.19, y: 8.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -161,12 +161,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 12f423e06fd98ff4f9a130df8f507bc9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b83d71abc215ab846ae0edfb70b90bfb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 91.9, y: 53.309998}
+  m_Size: {x: 1.45, y: 1.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -205,12 +205,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a91854e5f5f872e43bb366e12d8c636f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 94d665e1a807e9f45b3fd20edb13fcdb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.18, y: 7.2}
+  m_Size: {x: 5.19, y: 8.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
