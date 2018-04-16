@@ -16,7 +16,7 @@ public class lampController : MonoBehaviour {
 	void Update () {
 		if(lampState_ == "lampInRange"){
 
-			if(Input.GetKey(KeyCode.Z)){
+			if(Input.GetKeyDown(KeyCode.Z)){
 
 				if(animator.GetInteger("animLamp") == 0){
 
