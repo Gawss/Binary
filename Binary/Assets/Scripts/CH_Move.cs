@@ -6,6 +6,7 @@ public class CH_Move : MonoBehaviour {
 
 	public static string playerAction;
     float speed_x;
+	float walkSpeed;
 	float speed_y;
 	bool jumping;
 	public static bool jumpingAttack_Available;
@@ -22,7 +23,7 @@ public class CH_Move : MonoBehaviour {
 		jumpingAttack_Available = false;
 
 		playerAction = "Idle";
-	
+		walkSpeed = 10.0f;
     }
 
 	void Update(){
@@ -48,11 +49,20 @@ public class CH_Move : MonoBehaviour {
 
 		if(jumping == false){
 
+			if(Input.GetKey(KeyCode.LeftControl)){
+				walkSpeed = 20.0f;
+			}else{
+				walkSpeed = 10.0f;
+			}
 			if(Input.GetAxis("Horizontal") != 0){
 				// Debug.Log("animCh = 1");
-				animator.SetInteger("animCh", 1);
+				if(walkSpeed == 20.0f){
+					animator.SetInteger("animCh", 5);
+				}else{
+					animator.SetInteger("animCh", 1);
+				}
 			}
-			rb.velocity = new Vector3(speed_x*10.0f, 0, 0);
+			rb.velocity = new Vector3(speed_x*walkSpeed, 0, 0);
 			if (Input.GetKey(KeyCode.Space)){
 				// this.transform.position += new Vector3(0, 0.2f, 0);
 				rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
