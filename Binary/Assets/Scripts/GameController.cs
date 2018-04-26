@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -13,16 +14,28 @@ public class GameController : MonoBehaviour {
 	private Vector3 offset;
 	public Camera mainCam;
 
+	public GameObject energyBar;
+	public int startingEnergy;
+	public static int currentEnergy;
+
 	// Use this for initialization
 	void Start () {
 		level = 0;
 		initLevel = false;
 		offset = mainCam.transform.position - player.transform.position;
 		// offset.x = offset.x*10;
+
+		startingEnergy = 50;
+		currentEnergy = startingEnergy;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		// currentEnergy = this.GetComponent<GameController>().currentEnergy;
+		var energyBarRectTransform = energyBar.transform as RectTransform;
+		energyBarRectTransform.sizeDelta = new Vector2 (currentEnergy, 25);
+
 		playerPosition = player.transform.position;
 		mainCam.transform.position = player.transform.position + offset;
 		if(initLevel == false){
