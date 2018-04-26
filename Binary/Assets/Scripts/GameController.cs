@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour {
 	public int startingEnergy;
 	public static int currentEnergy;
 
+
 	// Use this for initialization
 	void Start () {
 		level = 0;
@@ -33,11 +34,11 @@ public class GameController : MonoBehaviour {
 	void Update () {
 
 		// currentEnergy = this.GetComponent<GameController>().currentEnergy;
-		var energyBarRectTransform = energyBar.transform as RectTransform;
-		energyBarRectTransform.sizeDelta = new Vector2 (currentEnergy, 25);
+		StartCoroutine("energyBarTransition");
 
 		playerPosition = player.transform.position;
 		mainCam.transform.position = player.transform.position + offset;
+
 		if(initLevel == false){
 			if(level == 99){
 				for(int generator = 0; generator < 2; generator ++){
@@ -52,4 +53,12 @@ public class GameController : MonoBehaviour {
 			
 		}
 	}
+
+	public IEnumerator energyBarTransition() {
+		for (float f = 0f; f <= currentEnergy; f += 2.0f) {
+			var energyBarRectTransform = energyBar.transform as RectTransform;
+			energyBarRectTransform.sizeDelta = new Vector2 (f+ startingEnergy, 25);
+			yield return null;
+		}
+	}	
 }

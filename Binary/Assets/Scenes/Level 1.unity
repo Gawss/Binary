@@ -214,26 +214,6 @@ Prefab:
       propertyPath: m_Name
       value: UserInterface_Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 224349691877437882, guid: afa20f6db473fac40a1905aa5c67ac1f,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -466
-      objectReference: {fileID: 0}
-    - target: {fileID: 224444942652202264, guid: afa20f6db473fac40a1905aa5c67ac1f,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -467
-      objectReference: {fileID: 0}
-    - target: {fileID: 224349691877437882, guid: afa20f6db473fac40a1905aa5c67ac1f,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -436.5996
-      objectReference: {fileID: 0}
-    - target: {fileID: 224444942652202264, guid: afa20f6db473fac40a1905aa5c67ac1f,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -1889
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: afa20f6db473fac40a1905aa5c67ac1f, type: 2}
   m_IsPrefabParent: 0

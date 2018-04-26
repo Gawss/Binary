@@ -50,13 +50,13 @@ public class CH_Move : MonoBehaviour {
 		if(jumping == false){
 
 			if(Input.GetKey(KeyCode.LeftControl)){
-				walkSpeed = 20.0f;
-			}else{
 				walkSpeed = 10.0f;
+			}else{
+				walkSpeed = 5.0f;
 			}
 			if(Input.GetAxis("Horizontal") != 0){
 				// Debug.Log("animCh = 1");
-				if(walkSpeed == 20.0f){
+				if(walkSpeed == 10.0f){
 					animator.SetInteger("animCh", 5);
 				}else{
 					animator.SetInteger("animCh", 1);
