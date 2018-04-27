@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CH_Move.cs" />
      <Compile Include="Assets\Scripts\EnemyT1Controller.cs" />
+     <Compile Include="Assets\Scripts\energyBarController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\lampController.cs" />
      <Compile Include="Assets\Scripts\MenuController.cs" />

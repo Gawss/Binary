@@ -427,11 +427,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 627ffa66638c8fc4e8f41fdc05aaf144, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1100682592 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1514076031052574, guid: afa20f6db473fac40a1905aa5c67ac1f,
-    type: 2}
-  m_PrefabInternal: {fileID: 109358272}
 --- !u!1001 &1253055194
 Prefab:
   m_ObjectHideFlags: 0
@@ -541,11 +536,6 @@ Prefab:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 454554246}
-    - target: {fileID: 114164939478044656, guid: f63851efc8ca69b4f84b3f3ccbea01aa,
-        type: 2}
-      propertyPath: energyBar
-      value: 
-      objectReference: {fileID: 1100682592}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f63851efc8ca69b4f84b3f3ccbea01aa, type: 2}
   m_IsPrefabParent: 0

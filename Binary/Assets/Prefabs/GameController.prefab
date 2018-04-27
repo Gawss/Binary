@@ -55,5 +55,3 @@ MonoBehaviour:
     type: 2}
   player: {fileID: 0}
   mainCam: {fileID: 0}
-  energyBar: {fileID: 0}
-  startingEnergy: 50

@@ -14,10 +14,6 @@ public class GameController : MonoBehaviour {
 	private Vector3 offset;
 	public Camera mainCam;
 
-	public GameObject energyBar;
-	public int startingEnergy;
-	public static int currentEnergy;
-	public static int newCurrentEnergy;
 
 
 	// Use this for initialization
@@ -27,19 +23,12 @@ public class GameController : MonoBehaviour {
 		offset = mainCam.transform.position - player.transform.position;
 		// offset.x = offset.x*10;
 
-		startingEnergy = 50;
-		currentEnergy = startingEnergy;
-		newCurrentEnergy = currentEnergy;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		currentEnergy = (int)energyBar.GetComponent<RectTransform>().sizeDelta.x;
-		if(newCurrentEnergy != currentEnergy){
-			StartCoroutine("energyBarTransition");
-		}		
-
+	
 		playerPosition = player.transform.position;
 		mainCam.transform.position = player.transform.position + offset;
 
@@ -57,20 +46,4 @@ public class GameController : MonoBehaviour {
 			
 		}
 	}
-
-	public IEnumerator energyBarTransition() {
-		if(newCurrentEnergy > currentEnergy){
-			for (float f = currentEnergy; f <= newCurrentEnergy; f += 2.0f) {
-				var energyBarRectTransform = energyBar.transform as RectTransform;
-				energyBarRectTransform.sizeDelta = new Vector2 (f, 25);
-				yield return null;
-			}
-		}else if(newCurrentEnergy < currentEnergy){
-			for (float f = currentEnergy; f >= newCurrentEnergy; f -= 2.0f) {
-				var energyBarRectTransform = energyBar.transform as RectTransform;
-				energyBarRectTransform.sizeDelta = new Vector2 (f, 25);
-				yield return null;
-			}
-		}
-	}	
 }
