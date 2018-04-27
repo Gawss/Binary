@@ -22,12 +22,12 @@ public class lampController : MonoBehaviour {
 
 					CH_Move.playerAction = "TurningObj_On";
 					animator.SetInteger("animLamp", 1);
-					GameController.currentEnergy += 200;
+					GameController.newCurrentEnergy += 200;
 					
 				}else if(animator.GetInteger("animLamp") == 1){
 					animator.SetInteger("animLamp", 0);
 					CH_Move.playerAction = "TurningObj_On";
-					GameController.currentEnergy -= 200;
+					GameController.newCurrentEnergy -= 200;
 				}
 			}
 			if(GameController.level == 0){
