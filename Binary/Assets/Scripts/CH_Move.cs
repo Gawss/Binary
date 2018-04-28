@@ -103,7 +103,7 @@ public class CH_Move : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.tag == "platform" || coll.gameObject.tag == "enemyCollider"){
 			Debug.Log("Player is in the ground...");
-			animator.SetInteger("animCh", 0);
+			// animator.SetInteger("animCh", 0);
             jumping  = false;
 		}
 

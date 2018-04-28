@@ -18,7 +18,7 @@ public class EnemyT1Controller : MonoBehaviour {
 	void Update () {
 		if(enemyAnim_State == "dead"){
 			animator.SetInteger("animEnemy", 1);
-			Destroy(gameObject);
+			// Destroy(gameObject);
 			GameController.initLevel = false;
 			// GameController.level = 2;
 		}else{
@@ -37,11 +37,13 @@ public class EnemyT1Controller : MonoBehaviour {
 	}
 	void OnTriggerStay2D(Collider2D coll){
         if (coll.gameObject.tag == "playerTrigger"){
+			Debug.Log("enemyInRange");
 			enemyInRange = true;
 		}
 	}
 	void OnTriggerExit2D(Collider2D coll){
         if (coll.gameObject.tag == "playerTrigger"){
+			Debug.Log("enemyOutRange");
 			enemyInRange = false;
 		}
 	}
