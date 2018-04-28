@@ -22,11 +22,13 @@ public class EnemyT1Controller : MonoBehaviour {
 			GameController.initLevel = false;
 			// GameController.level = 2;
 		}else{
-			transform.position = Vector2.MoveTowards(transform.position,  new Vector2(GameController.playerPosition.x ,-1.5f), 2.0f * Time.deltaTime);
+			// transform.position = Vector2.MoveTowards(transform.position,  new Vector2(GameController.playerPosition.x ,-1.8f), 2.0f * Time.deltaTime);
+			transform.position += -transform.right * Time.deltaTime *2f;
 			if(CH_Move.jumpingAttack_Available == true){
-				if(Input.GetKey(KeyCode.Z)){
+				if(Input.GetKey(KeyCode.X)){
 
 					if(enemyInRange == true){
+						energyBarController.newCurrentEnergy -= 10;
 						Debug.Log("Enemy killed...");
 						enemyAnim_State = "dead";
 					}
@@ -45,6 +47,12 @@ public class EnemyT1Controller : MonoBehaviour {
         if (coll.gameObject.tag == "playerTrigger"){
 			Debug.Log("enemyOutRange");
 			enemyInRange = false;
+		}
+	}
+	void OnTriggerEnter2D(Collider2D coll){
+        if (coll.gameObject.tag == "enemyMoveLimiter"){
+			Debug.Log("changeDir");
+			transform.Rotate(0, 180, 0);
 		}
 	}
 }

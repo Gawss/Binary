@@ -35,10 +35,8 @@ public class CH_Move : MonoBehaviour {
 
 
 		if(Input.GetAxis("Horizontal") < 0){
-			Debug.Log("< 0");
 			this.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f); 
 		}else if(Input.GetAxis("Horizontal") > 0){
-			Debug.Log("> 0");
 			this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f); 
 		}
 		
@@ -79,13 +77,11 @@ public class CH_Move : MonoBehaviour {
 				// this.transform.position += new Vector3(0, 0.2f, 0);
 				rb.AddForce(new Vector2(3.0f*speed_x, 0), ForceMode2D.Impulse);
 				// rb.velocity = new Vector2(0, 100.0f);
-				Debug.Log("Player is turning left...");
 			}
 			if (Input.GetKey(KeyCode.RightArrow)){
 				// this.transform.position += new Vector3(0, 0.2f, 0);
 				rb.AddForce(new Vector2(3.0f*speed_x, 0), ForceMode2D.Impulse);
 				// rb.velocity = new Vector2(0, 100.0f);
-				Debug.Log("Player is turning right...");
 			}
 		}
 		if(jumpingAttack_Available == true){
