@@ -22,7 +22,7 @@ public class EnemyT1Controller : MonoBehaviour {
 			GameController.initLevel = false;
 			// GameController.level = 2;
 		}else{
-			transform.position = Vector2.MoveTowards(transform.position,  GameController.playerPosition, 2.0f * Time.deltaTime);
+			transform.position = Vector2.MoveTowards(transform.position,  new Vector2(GameController.playerPosition.x ,-1.5f), 2.0f * Time.deltaTime);
 			if(CH_Move.jumpingAttack_Available == true){
 				if(Input.GetKey(KeyCode.Z)){
 
