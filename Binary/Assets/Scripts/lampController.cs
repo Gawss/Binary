@@ -14,6 +14,9 @@ public class lampController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(animator.GetInteger("animLamp") == 2){
+			animator.SetInteger("animLamp", 1);
+		}
 		if(lampState_ == "lampInRange"){
 
 			if(Input.GetKeyDown(KeyCode.Z)){
@@ -24,10 +27,13 @@ public class lampController : MonoBehaviour {
 					animator.SetInteger("animLamp", 1);
 					energyBarController.newCurrentEnergy += 20;
 					
-				}else if(animator.GetInteger("animLamp") == 1){
+				}else if(animator.GetInteger("animLamp") == 1 && energyBarController.newCurrentEnergy >= 20){
 					animator.SetInteger("animLamp", 0);
 					CH_Move.playerAction = "TurningObj_On";
 					energyBarController.newCurrentEnergy -= 20;
+				}else if(animator.GetInteger("animLamp") == 1 && energyBarController.newCurrentEnergy < 20){
+					animator.SetInteger("animLamp", 2);
+					CH_Move.playerAction = "TurningObj_On";
 				}
 			}
 			if(GameController.level == 0){

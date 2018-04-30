@@ -24,6 +24,14 @@ public class EnemyT1Controller : MonoBehaviour {
 			GameController.initLevel = false;
 			// GameController.level = 2;
 		}else{
+
+			if(enemyAnim_State == "attacking"){
+				animator.SetInteger("animEnemy", 2);
+			}
+			else{
+				animator.SetInteger("animEnemy", 0);
+			}
+			// animator.SetInteger("animEnemy", 0);
 			// transform.position = Vector2.MoveTowards(transform.position,  new Vector2(GameController.playerPosition.x ,-1.8f), 2.0f * Time.deltaTime);
 			transform.position += -transform.right * Time.deltaTime *2f;
 			if(CH_Move.jumpingAttack_Available == true){
@@ -35,7 +43,6 @@ public class EnemyT1Controller : MonoBehaviour {
 						pressToKill_Img.SetActive(false);
 						enemyAnim_State = "dead";
 					}
-					
 				}
 			}
 		}
@@ -66,10 +73,18 @@ public class EnemyT1Controller : MonoBehaviour {
 	}
 	void OnCollisionStay2D(Collision2D coll){
 		if(coll.gameObject.tag == "Player"){
-			if(enemyAnim_State == "alive"){
+			if(enemyAnim_State != "dead"){
 				if(energyBarController.newCurrentEnergy > 0){
+					enemyAnim_State = "attacking";
 					energyBarController.newCurrentEnergy -= 1;
 				}
+			}
+		}
+	}
+	void OnCollisionExit2D(Collision2D coll){
+		if(coll.gameObject.tag == "Player"){
+			if(enemyAnim_State != "dead"){
+				enemyAnim_State = "normal";
 			}
 		}
 	}

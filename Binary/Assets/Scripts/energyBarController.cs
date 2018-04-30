@@ -8,7 +8,7 @@ public class energyBarController : MonoBehaviour {
 
 	// public GameObject energyBar;
 	public int startingEnergy;
-	int currentEnergy;
+	public static int currentEnergy;
 	public static int newCurrentEnergy;
 	
 	// public GameObject numEnergyBar;
