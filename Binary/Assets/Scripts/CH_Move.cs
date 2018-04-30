@@ -29,10 +29,6 @@ public class CH_Move : MonoBehaviour {
 	void Update(){
 
 		speed_x = Input.GetAxis("Horizontal");
-		// speed_y = Input.GetAxis("Vertical");
-		// // rb.velocity = new Vector3(speed_x*5.0f, speed_y*25.0f, 0);
-		// rb.velocity = new Vector3(speed_x*5.0f, speed_y, 0);
-
 
 		if(Input.GetAxis("Horizontal") < 0){
 			this.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f); 
@@ -41,7 +37,6 @@ public class CH_Move : MonoBehaviour {
 		}
 		
 		else{
-			// Debug.Log("animCh = 0");
 			animator.SetInteger("animCh", 0);
 		}
 
@@ -53,7 +48,7 @@ public class CH_Move : MonoBehaviour {
 				walkSpeed = 5.0f;
 			}
 			if(Input.GetAxis("Horizontal") != 0){
-				// Debug.Log("animCh = 1");
+
 				if(walkSpeed == 10.0f){
 					animator.SetInteger("animCh", 5);
 				}else{
@@ -74,14 +69,13 @@ public class CH_Move : MonoBehaviour {
 		}else{
 			
 			if (Input.GetKey(KeyCode.LeftArrow)){
-				// this.transform.position += new Vector3(0, 0.2f, 0);
+
 				rb.AddForce(new Vector2(3.0f*speed_x, 0), ForceMode2D.Impulse);
-				// rb.velocity = new Vector2(0, 100.0f);
 			}
 			if (Input.GetKey(KeyCode.RightArrow)){
-				// this.transform.position += new Vector3(0, 0.2f, 0);
+
 				rb.AddForce(new Vector2(3.0f*speed_x, 0), ForceMode2D.Impulse);
-				// rb.velocity = new Vector2(0, 100.0f);
+
 			}
 		}
 		if(jumpingAttack_Available == true){
@@ -98,10 +92,9 @@ public class CH_Move : MonoBehaviour {
 	}
     void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.tag == "platform" || coll.gameObject.tag == "enemyCollider"){
-			Debug.Log("Player is in the ground...");
+			Debug.Log("Reset Player Jump...");
 			// animator.SetInteger("animCh", 0);
             jumping  = false;
 		}
-
     }
 }

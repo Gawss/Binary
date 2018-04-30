@@ -7,6 +7,8 @@ public class EnemyT1Controller : MonoBehaviour {
 	string enemyAnim_State;
 	bool enemyInRange;
 	Animator animator;
+
+	public GameObject pressToKill_Img;
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
@@ -28,8 +30,9 @@ public class EnemyT1Controller : MonoBehaviour {
 				if(Input.GetKey(KeyCode.X)){
 
 					if(enemyInRange == true){
-						energyBarController.newCurrentEnergy -= 10;
+						energyBarController.newCurrentEnergy += 10;
 						Debug.Log("Enemy killed...");
+						pressToKill_Img.SetActive(false);
 						enemyAnim_State = "dead";
 					}
 					
@@ -40,12 +43,18 @@ public class EnemyT1Controller : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D coll){
         if (coll.gameObject.tag == "playerTrigger"){
 			Debug.Log("enemyInRange");
+			if(enemyAnim_State == "alive"){
+				pressToKill_Img.SetActive(true);
+			}
 			enemyInRange = true;
 		}
 	}
 	void OnTriggerExit2D(Collider2D coll){
         if (coll.gameObject.tag == "playerTrigger"){
 			Debug.Log("enemyOutRange");
+			if(enemyAnim_State == "alive"){
+				pressToKill_Img.SetActive(false);
+			}
 			enemyInRange = false;
 		}
 	}
@@ -53,6 +62,15 @@ public class EnemyT1Controller : MonoBehaviour {
         if (coll.gameObject.tag == "enemyMoveLimiter"){
 			Debug.Log("changeDir");
 			transform.Rotate(0, 180, 0);
+		}
+	}
+	void OnCollisionStay2D(Collision2D coll){
+		if(coll.gameObject.tag == "Player"){
+			if(enemyAnim_State == "alive"){
+				if(energyBarController.newCurrentEnergy > 0){
+					energyBarController.newCurrentEnergy -= 1;
+				}
+			}
 		}
 	}
 }
