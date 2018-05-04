@@ -28,8 +28,6 @@ public class CH_Move : MonoBehaviour {
 
 	void Update(){
 
-		speed_x = Input.GetAxis("Horizontal");
-
 		if(Input.GetAxis("Horizontal") < 0){
 			this.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f); 
 		}else if(Input.GetAxis("Horizontal") > 0){
@@ -47,15 +45,7 @@ public class CH_Move : MonoBehaviour {
 			}else{
 				walkSpeed = 5.0f;
 			}
-			// if(Input.GetAxis("Horizontal") != 0){
 
-			// 	if(walkSpeed == 10.0f){
-			// 		animator.SetInteger("animCh", 5);
-			// 	}else{
-			// 		animator.SetInteger("animCh", 1);
-			// 	}
-			// }
-			rb.velocity = new Vector3(speed_x*walkSpeed, 0, 0);
 			if (Input.GetKeyDown(KeyCode.Space)){
 				// this.transform.position += new Vector3(0, 0.2f, 0);
 				rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -89,6 +79,12 @@ public class CH_Move : MonoBehaviour {
 			animator.SetInteger("animCh", 4);
 			playerAction = "Idle";
 		}
+
+		if(playerAction == "deadByHole"){
+			this.transform.position = GameController.starterPosition;
+			playerAction = "idle";
+			jumping  = false;
+		}
 	}
     void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.tag == "platform" || coll.gameObject.tag == "enemyCollider"){
@@ -100,14 +96,26 @@ public class CH_Move : MonoBehaviour {
 
 	void OnCollisionStay2D(Collision2D coll){
         if (coll.gameObject.tag == "platform" || coll.gameObject.tag == "enemyCollider"){
-			if(Input.GetAxis("Horizontal") != 0 && jumping == false){
 
-				if(walkSpeed == 10.0f){
-					animator.SetInteger("animCh", 5);
-				}else{
-					animator.SetInteger("animCh", 1);
+			if(jumping == false){
+				speed_x = Input.GetAxis("Horizontal");
+				if(Input.GetAxis("Horizontal") != 0){
+
+					if(walkSpeed == 10.0f){
+						animator.SetInteger("animCh", 5);
+					}else{
+						animator.SetInteger("animCh", 1);
+					}
 				}
+				rb.velocity = new Vector3(speed_x*walkSpeed, 0, 0);
 			}
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D coll){
+		if(coll.gameObject.tag == "deadLimiter"){
+			playerAction = "deadByHole";
+			energyBarController.newCurrentEnergy = 10;
 		}
 	}
 }

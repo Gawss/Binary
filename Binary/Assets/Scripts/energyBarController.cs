@@ -34,7 +34,7 @@ public class energyBarController : MonoBehaviour {
 		if(newCurrentEnergy > currentEnergy){
 			for (float f = currentEnergy; f <= newCurrentEnergy; f += 2.0f) {
 				energyBarRectTransform = this.transform as RectTransform;
-				energyBarRectTransform.sizeDelta = new Vector2 (f, 25);
+				energyBarRectTransform.sizeDelta = new Vector2 (f, 50);
 				if(f < 20){
 					this.GetComponent<Image>().color = new Color(255, 0, 0);
 				}
@@ -46,7 +46,7 @@ public class energyBarController : MonoBehaviour {
 		}else if(newCurrentEnergy < currentEnergy){
 			for (float f = currentEnergy; f >= newCurrentEnergy; f -= 2.0f) {
 				energyBarRectTransform = this.transform as RectTransform;
-				energyBarRectTransform.sizeDelta = new Vector2 (f, 25);
+				energyBarRectTransform.sizeDelta = new Vector2 (f, 50);
 				if(f < 20){
 					this.GetComponent<Image>().color = new Color(255, 0, 0);
 				}

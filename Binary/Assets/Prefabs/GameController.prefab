@@ -55,3 +55,8 @@ MonoBehaviour:
     type: 2}
   player: {fileID: 0}
   mainCam: {fileID: 0}
+  lamp_1: {fileID: 0}
+  lamp_2: {fileID: 0}
+  lamp_3: {fileID: 0}
+  lamp_4: {fileID: 0}
+  buttonRed: {fileID: 0}

@@ -11,18 +11,17 @@ public class GameController : MonoBehaviour {
 	public GameObject enemyPrefab;
 	public GameObject player;
 	public static Vector3 playerPosition;
+	public static Vector3 starterPosition;
 	private Vector3 offset;
 	public Camera mainCam;
-
-
 
 	// Use this for initialization
 	void Start () {
 		level = 0;
 		initLevel = false;
 		offset = mainCam.transform.position - player.transform.position;
-		// offset.x = offset.x*10;
-
+		offset.x = 1;
+		playerPosition = starterPosition;
 
 	}
 	
@@ -43,7 +42,7 @@ public class GameController : MonoBehaviour {
 		}
 		if(level == 0){
 			// Vector2.Distance(enemyPrefab.transform.position, player.transform.position);
-			
+			starterPosition = new Vector3(-7.69f,1.501593f,-0.7f);
 		}
 	}
 }

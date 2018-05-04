@@ -9,6 +9,7 @@ TagManager:
   - lamp
   - playerTrigger
   - enemyMoveLimiter
+  - deadLimiter
   layers:
   - Default
   - TransparentFX

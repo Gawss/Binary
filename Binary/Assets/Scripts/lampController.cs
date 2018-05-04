@@ -7,6 +7,7 @@ public class lampController : MonoBehaviour {
 	Animator animator;
 	string lampState_;
 	public GameObject lampTutorial;
+	public bool lampSpecial;
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
@@ -43,6 +44,13 @@ public class lampController : MonoBehaviour {
 
 			if(GameController.level == 0){
 				lampTutorial.SetActive(false);
+			}
+		}
+		if(CH_Move.playerAction == "deadByHole"){
+			if(lampSpecial == true){
+
+			}else{
+				animator.SetInteger("animLamp", 0);
 			}
 		}
 	}
