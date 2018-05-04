@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 471}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 12513
+  controlID: 537
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 432, y: 471}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 12592
+  controlID: 601
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 304, y: 200}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 12593
+  controlID: 602
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_MinSize: {x: 432, y: 271}
   m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 12447
+  controlID: 487
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -417,9 +417,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0c930000
-    m_LastClickedID: 37644
-    m_ExpandedIDs: 988ffbff6690fbff9e92fbffb692fbff00000000b4930000f6940000
+    m_SelectedIDs: 862e0000
+    m_LastClickedID: 11910
+    m_ExpandedIDs: 8ef4ffffbcf5ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -437,7 +437,8 @@ MonoBehaviour:
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
-  m_ExpandedScenes: []
+  m_ExpandedScenes:
+  - Level 1
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -608,14 +609,14 @@ MonoBehaviour:
     - {fileID: 1107221640646135992, guid: 6b81c610f9f06614a96261224fa71f51, type: 2}
     - {fileID: 1107586273386327966, guid: c4e2d719efa7eec459bea85b906a0758, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.77002543
+    - e00: 0.31235954
       e01: 0
       e02: 0
-      e03: 23.100754
+      e03: 130.04439
       e10: 0
-      e11: 0.77002543
+      e11: 0.31235954
       e12: 0
-      e13: -115.503815
+      e13: 41.238205
       e20: 0
       e21: 0
       e22: 1
@@ -724,19 +725,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\Miguel\Entretenimiento digital\Unity3D Projects\Videojuegos\Binary\Binary
+  m_LastProjectPath: C:\Users\lpalacio\Desktop\Miguel\Propio\Unity3D\Binary\Binary
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: ac2d0000
-    m_LastClickedID: 11692
-    m_ExpandedIDs: 00000000202d00004e2d00005c2d0000be2d0000da2d0000182e00002c2e0000ffffff7f
+    m_SelectedIDs: 422d0000
+    m_LastClickedID: 11586
+    m_ExpandedIDs: 00000000422d0000702d00007e2d0000e02d0000fc2d0000402e0000542e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -764,7 +765,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000202d00004e2d00005c2d0000be2d0000da2d0000182e00002c2e0000ffffff7f
+    m_ExpandedIDs: 00000000422d0000702d00007e2d0000e02d0000fc2d0000402e0000542e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
